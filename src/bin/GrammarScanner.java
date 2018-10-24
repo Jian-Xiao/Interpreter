@@ -103,7 +103,13 @@ public class GrammarScanner {
 			curString+=")";			
 			current++;
 		} else {
+			try{
 			curString+=tokens.get(current);
+			}catch (Exception e) {
+				errorMessage="Óï·¨´íÎó£ºsomething wrong near "+tokens.get(current);
+				System.out.println("Óï·¨´íÎó£ºsomething wrong near "+tokens.get(current));
+				return ;
+			}
 			wenfa.add("F ->num ,"+curString);
 			if(current<tokens.size()&&!(getType(tokens.get(current)).equals("number"))) {
 				errorMessage="Óï·¨´íÎó£ºsomething wrong near "+tokens.get(current);

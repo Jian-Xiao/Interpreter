@@ -68,6 +68,11 @@ public class Window {
 		expression.setColumns(10);
 
 		JButton btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				clearBtn();
+			}
+		});
 
 		resultTxt = new JTextField();
 		resultTxt.setColumns(10);
@@ -142,9 +147,14 @@ public class Window {
 			resultTxt.setText(result.get(0));
 	}
 
-	public static void print(List<String> result) {
+	public void print(List<String> result) {
 		for (String string : result) {
 			System.out.println(string);
 		}
+	}
+	
+	public void clearBtn() {
+		resultTxt.setText("");
+		expression.setText("");
 	}
 }
