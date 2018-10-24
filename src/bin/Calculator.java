@@ -12,7 +12,6 @@ public class Calculator {
 	public  String str = "";
 	public  int lineNum = 0;
 	
-
 	public  LinkedListStack testOne = new LinkedListStack();
 	public  LinkedListStack testTwo = new LinkedListStack();
 

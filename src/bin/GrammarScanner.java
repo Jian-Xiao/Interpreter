@@ -8,16 +8,19 @@ public class GrammarScanner {
 	List<String>  tokens;
 	String curString="";
 	int current = 0;
-
+    String errorMessage="”Ô∑®¥ÌŒÛ£∫something wrong";
+	
 	public GrammarScanner(List<String>  tokens) {
 		this.tokens = tokens;
 	}
 
 	public List<String> analyse() {
 		analyseM();
-		if(current!=tokens.size()) {
+		if(current!=tokens.size()||errorMessage.length()!=20) {
+			wenfa.clear();
+			wenfa.add(errorMessage);
 			System.out.println("”Ô∑®¥ÌŒÛ£∫something wrong");
-			return null;
+			return wenfa;
 		}
 		return wenfa;
 	}
@@ -94,6 +97,7 @@ public class GrammarScanner {
 			wenfa.add("F ->(E) ,"+curString);
 			analyseE();
 			if (current<tokens.size()&&!tokens.get(current).equals(")")) {
+				errorMessage="”Ô∑®¥ÌŒÛ£∫something wrong in )";
 				System.out.println("”Ô∑®¥ÌŒÛ£∫something wrong in )");
 			}
 			curString+=")";			
@@ -102,6 +106,7 @@ public class GrammarScanner {
 			curString+=tokens.get(current);
 			wenfa.add("F ->num ,"+curString);
 			if(current<tokens.size()&&!(getType(tokens.get(current)).equals("number"))) {
+				errorMessage="”Ô∑®¥ÌŒÛ£∫something wrong near "+tokens.get(current);
 				System.out.println("”Ô∑®¥ÌŒÛ£∫something wrong near "+tokens.get(current));
 			}
 			current++;

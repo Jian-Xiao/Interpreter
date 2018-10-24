@@ -7,7 +7,7 @@ import javax.script.ScriptException;
 
 public class MainConsole {
 
-	public static void main(String[] args) throws IOException, ScriptException {
+	/*public static void main(String[] args) throws IOException, ScriptException {
 		//¶ÁÈ¡ÎÄ¼þ
 		String path = "C:\\Users\\Lenovo\\Desktop\\analyser\\ArithmeticExpression\\testFile\\6.txt";
 		FileRead fileRead = FileRead.getInstance();
@@ -38,4 +38,5 @@ public class MainConsole {
 			System.out.println(string);
 		}
 	}
+	*/
 }

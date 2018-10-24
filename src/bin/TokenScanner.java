@@ -22,8 +22,10 @@ public class TokenScanner {
 		for (int i = 0; i < charArray.length; i++) {
 			// ¼ÇµÃ¼ÓÅÐ¶Ï
 			if (!legalCharacter.contains(charArray[i])) {
+				tokens.clear();
+				tokens.add("´Ê·¨´íÎó£º·Ç·¨×Ö·û");
 				System.out.println("´Ê·¨´íÎó£º·Ç·¨×Ö·û");
-				return null;
+				return tokens;
 			}
 			switch (status) {
 			case 0:
@@ -42,8 +44,10 @@ public class TokenScanner {
 					status = 5;
 					token += Character.toString(charArray[i]);
 				} else {
+					tokens.clear();
+					tokens.add("´Ê·¨´íÎó£ºÊäÈë´íÎó");
 					System.out.println("´Ê·¨´íÎó£ºÊäÈë´íÎó");
-					return null;
+					return tokens;
 				}
 				break;
 
@@ -69,8 +73,10 @@ public class TokenScanner {
 				}
 				// ·ñÔò±¨´í
 				else {
+					tokens.clear();
+					tokens.add("´Ê·¨´íÎó£ºÊý×ÖÊäÈë´íÎó");
 					System.out.println("´Ê·¨´íÎó£ºÊý×ÖÊäÈë´íÎó");
-					return null;
+					return tokens;
 				}
 				break;
 			case 3:
